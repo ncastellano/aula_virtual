@@ -6,7 +6,7 @@ Crear Usuario
 @section('content')
 
 
- :{{ $action}}
+ {{ $action}}
 
 
 <h3>Listado de asignaturas para este profesor:</h3>
