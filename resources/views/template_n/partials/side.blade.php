@@ -203,6 +203,7 @@
                       </a>
                   </li>
 
+                  @if( strtoupper(Auth::user()->type) =='PROFESOR') 
                   <li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-desktop"></i>
@@ -212,12 +213,11 @@
                           <li><a  href="{!! url('admin/users'); !!}">Administrar Usuarios</a></li>
                           <li><a  href="{!! url('admin/asignatura_admin'); !!}">Administrar Asignaturas</a></li>
                           <li><a  href="{!! url('admin/cursos'); !!}">Administrar Cursos</a></li>
-                          <li><a  href="{!! url('admin/asignaturas'); !!}">MI Departamento</a></li>
-            
+                          <li><a  href="{!! url('admin/asignaturas'); !!}">Mi Departamento</a></li>            
                           <li><a  href="#">Foros</a></li>
                       </ul>
                   </li>
-
+                  @endif
                   <!--li class="sub-menu">
                       <a href="javascript:;" >
                           <i class="fa fa-cogs"></i>
@@ -395,9 +395,6 @@
       </footer>
       <!--footer end-->
   </section>
-
-    
-
 
   </body>
 </html>

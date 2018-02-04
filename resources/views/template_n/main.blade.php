@@ -155,11 +155,10 @@ label {
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet"  href="{{ asset('plugins/chosen/chosen.css')}} ">
 	<link rel="stylesheet"  href="{{ asset('plugins/trumbowyg/ui/trumbowyg.css') }} ">
-
-	<!-- <link rel="stylesheet"  href="{{ asset('plugins/bootstrap/css/bootstrap.css')}}">  --> 
-
-
-
+  <!-- <link rel="stylesheet"  href="{{ asset('plugins/bootstrap/css/bootstrap.css')}}">  --> 
+  <link rel="stylesheet" href="{{ url('/')}}/css/plugin/datatables/dataTables.bootstrap.css">
+  <link rel="stylesheet" href="{{ url('/')}}/css/plugin/datatables/dataTables.bootstrap.min.css">
+  <script  src="{{ asset('plugins/jquery/js/jquery-3.2.1.js')}}"></script>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -179,10 +178,7 @@ label {
     <!-- Custom styles for this template -->
     <link href="{{ asset('plantilla/Theme/assets/css/style.css')}}" rel="stylesheet">
     <link href="{{ asset('plantilla/Theme/assets/css/style-responsive.css')}}" rel="stylesheet">
-
-    <script src="{{ asset('plantilla/Theme/assets/js/chart-master/Chart.js')}}"></script>	
-
-
+    <script src="{{ asset('plantilla/Theme/assets/js/chart-master/Chart.js')}}"></script>
 
 </head>
 <body class="cover">
@@ -193,18 +189,14 @@ label {
 
 <div class="cold-md-8">
   @include('flash::message')
-
-  </div>
+</div>
 
 <div class="container">
-
 	
 </div>
 
-  
-
- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
 <script  src="{{ asset('plugins/jquery/js/jquery-3.2.1.js')}}"></script>
+
 <script  src="{{ asset('plugins/jquery/js/bootstrap.js')}}"></script>
 <script  src="{{ asset('plugins/chosen/chosen.jquery.js') }}"></script>
 <script  src="{{ asset('plugins/trumbowyg/trumbowyg.js') }}"></script>
@@ -221,92 +213,120 @@ label {
       });
     });
   });
-  </script>
-
-
-
-<!-- js placed at the end of the document so the pages load faster -->
+</script>
+  <!-- js placed at the end of the document so the pages load faster -->
   <!--  <script src="{{ asset('plantilla/Theme/assets/js/jquery.js')}}"></script> -->
   <!--  <script src="{{ asset('plantilla/Theme/assets/js/jquery-1.8.3.min.js')}}"></script> -->
   <!--  <script src="{{ asset('plantilla/Theme/assets/js/bootstrap.min.js')}}"></script> -->
-    <script class="include" type="text/javascript" src="{{ asset('plantilla/Theme/assets/js/jquery.dcjqaccordion.2.7.js')}}"></script>
-    <script src="{{ asset('plantilla/Theme/assets/js/jquery.scrollTo.min.js')}}"></script>
-    <script src="{{ asset('plantilla/Theme/assets/js/jquery.nicescroll.js')}}" type="text/javascript"></script>
-    <script src="{{ asset('plantilla/Theme/assets/js/jquery.sparkline.js')}}"></script>
+  <script class="include" type="text/javascript" src="{{ asset('plantilla/Theme/assets/js/jquery.dcjqaccordion.2.7.js')}}"></script>
+  <script src="{{ asset('plantilla/Theme/assets/js/jquery.scrollTo.min.js')}}"></script>
+  <script src="{{ asset('plantilla/Theme/assets/js/jquery.nicescroll.js')}}" type="text/javascript"></script>
+  <script src="{{ asset('plantilla/Theme/assets/js/jquery.sparkline.js')}}"></script>
 
+  <!--common script for all pages-->
+  <script src="{{ asset('plantilla/Theme/assets/js/common-scripts.js')}}"></script>
+  
+  <script type="text/javascript" src="{{ asset('plantilla/Theme/assets/js/gritter/js/jquery.gritter.js')}}"></script>
+  <script type="text/javascript" src="{{ asset('plantilla/Theme/assets/js/gritter-conf.js')}}"></script>
 
-    <!--common script for all pages-->
-    <script src="{{ asset('plantilla/Theme/assets/js/common-scripts.js')}}"></script>
-    
-    <script type="text/javascript" src="{{ asset('plantilla/Theme/assets/js/gritter/js/jquery.gritter.js')}}"></script>
-    <script type="text/javascript" src="{{ asset('plantilla/Theme/assets/js/gritter-conf.js')}}"></script>
-
-    <!--script for this page-->
-    <script src="{{ asset('plantilla/Theme/assets/js/sparkline-chart.js')}}"></script>    
-  <script src="{{ asset('plantilla/Theme/assets/js/zabuto_calendar.js')}}"></script>
+  <!--script for this page-->
+  <script src="{{ asset('plantilla/Theme/assets/js/sparkline-chart.js')}}"></script>    
+  <script src="{{ asset('plantilla/Theme/assets/js/zabuto_calendar.min.js')}}"></script>
 
   <script type="text/javascript">
-        $(document).ready(function () {
-        var unique_id = $.gritter.add({
-            // (string | mandatory) the heading of the notification
-            title: 'Proyectos',
-            // (string | mandatory) the text inside the notification
-            text: 'Tiene informes pendientes por revisar',
-            // (string | optional) the image to display on the left
-            image: 'assets/img/ui-sam.jpg',
-            // (bool | optional) if you want it to fade out on its own or just sit there
-            sticky: true,
-            // (int | optional) the time you want it to be alive for before fading out
-            time: '5',
-            // (string | optional) the class name you want to apply to that specific message
-            class_name: 'my-sticky-class'
-        });
-
-        return false;
-        });
+    $(document).ready(function () {
+    var unique_id = $.gritter.add({
+      // (string | mandatory) the heading of the notification
+      title: 'Proyectos',
+      // (string | mandatory) the text inside the notification
+      text: 'Tiene informes pendientes por revisar',
+      // (string | optional) the image to display on the left
+      image: 'assets/img/ui-sam.jpg',
+      // (bool | optional) if you want it to fade out on its own or just sit there
+      sticky: true,
+      // (int | optional) the time you want it to be alive for before fading out
+      time: '5',
+      // (string | optional) the class name you want to apply to that specific message
+      class_name: 'my-sticky-class'
+    });
+    return false;
+    });
   </script>
-  
+
   <script type="application/javascript">
-        $(document).ready(function () {
-            $("#date-popover").popover({html: true, trigger: "manual"});
-            $("#date-popover").hide();
-            $("#date-popover").click(function (e) {
-                $(this).hide();
-            });
-        
+     /*
+            $(document).ready(function () {
+            var eventData = [{"date":"2018-02-22","title":"2018-02-22","classname":"grade-2","badge":false},{"date":"2018-02-21","title":"2018-02-21","classname":"grade-2","badge":false},{"date":"2018-02-20","title":"2018-02-20","classname":"grade-2","badge":false},{"date":"2018-02-19","title":"2018-02-19","classname":"grade-2","badge":false},{"date":"2018-02-18","title":"2018-02-18","classname":"grade-2","badge":false},{"date":"2018-02-17","title":"2018-02-17","classname":"grade-2","badge":false},{"date":"2018-02-16","title":"2018-02-16","classname":"grade-2","badge":false},{"date":"2018-02-15","title":"2018-02-15","classname":"grade-2","badge":false},{"date":"2018-02-14","title":"2018-02-14","classname":"grade-2","badge":false},{"date":"2018-02-05","title":"2018-02-05","classname":"grade-2","badge":false},{"date":"2018-02-04","title":"2018-02-04","classname":"grade-2","badge":false},{"date":"2018-02-03","title":"2018-02-03","classname":"grade-2","badge":false},{"date":"2018-02-02","title":"2018-02-02","classname":"grade-2","badge":false},{"date":"2018-02-01","title":"2018-02-01","classname":"grade-2","badge":false},{"date":"2015-12-31","title":"2015-12-31","classname":"grade-2","badge":false},{"date":"2015-12-30","title":"2015-12-30","classname":"grade-2","badge":false}];
+            var legendData = [
+                {type: "block", label: "Booked", classname: "grade-1"},
+                {type: "block", label: "Non Available/Closed", classname: "grade-2"},
+                {type: "block", label: "Today", classname: "grade-today"},
+            ];
             $("#my-calendar").zabuto_calendar({
-                action: function () {
-                    return myDateFunction(this.id, false);
-                },
-                action_nav: function () {
-                    return myNavFunction(this.id);
-                },
-                ajax: {
-                    url: "show_data.php?action=1",
-                    modal: true
-                },
-                legend: [
-                    {type: "text", label: "Special event", badge: "00"},
-                    {type: "block", label: "Regular event", }
-                ]
+                cell_border: true,
+                today: true,
+                weekstartson: 0,
+                language: "es",
+                show_previous: false,
+                show_next: 12,
+                data: eventData,
+                legend: legendData,
             });
         });
-        
-        
-        function myNavFunction(id) {
-            $("#date-popover").hide();
-            var nav = $("#" + id).data("navigation");
-            var to = $("#" + id).data("to");
-            console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
-        }
-    </script>
+    */
+    ///*
+    var eventData = [
+      /*foreach($proyectos as $proyecto){
+        {"date":"'".$proyecto->fecha_entrega."'","badge":true,"title":"'".$proyecto->nombre_proyecto."'"},  
+      }*/
 
+      @foreach($proyectos as $proyecto)        
+        {"date":"{{$proyecto->fecha_entrega}}","badge":true,"title":"{{$proyecto->nombre_proyecto}}"},
+      @endforeach
+      /*{"date":"2018-02-17","badge":true,"title":"Proyecto prueba"},
+      {"date":"2018-02-15","badge":true,"title":"Proyecto prueba 2"},*/
+    ];
+    $(document).ready(function () {
+      $("#date-popover").popover({html: true, trigger: "manual"});
+      $("#date-popover").hide();
+      $("#date-popover").click(function (e) {
+        $(this).hide();
+      });
+  
+      $("#my-calendar").zabuto_calendar({
+        data: eventData,
+        action: function () {
+          return myDateFunction(this.id, false);
+        },
+        action_nav: function () {
+          return myNavFunction(this.id);
+        },
+        ajax: {
+          url: "{{ url('/')}}/front/calendario",
+          modal: true
+        },
+        legend: [
+          {type: "text", label: "Proyectos del mes", badge: "{{$cantPro}}"},
+          //{type: "block", label: "Regular event", }
+        ],
+        //today: true,
+        //------------------Inicio de configuración---------------------
+        language: "es"
+        //---------------------------------------------------                
+      });
+    });
+    function myNavFunction(id) {
+      $("#date-popover").hide();
+      var nav = $("#" + id).data("navigation");
+      var to = $("#" + id).data("to");
+      console.log('nav ' + nav + ' to: ' + to.month + '/' + to.year);
+    }
+    //*/
+  </script>
 
- 
 <!--<script  src="{{ asset('plugins/bootstrap/css/bootstrap.css')}}"></script>  -->
 @yield('js')
 </body>
-
 
 </html>
 

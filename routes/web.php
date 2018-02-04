@@ -209,7 +209,32 @@ Auth::routes();
     //------------------------------------------------------
     //------------------------------------------------------
     //Route::resource('videos', 'VideosController');
-
+    //------------------------------------------------------
+    //Esta ruta es útil para datable, sin embargo, fué desechada ya que daba conflicto por el uso de librerías de query
+    /*Route::get('proyectos/getproyectos/{id}',[
+        'uses'  =>  'ProyectosController@getProyectos',
+        'as'    =>  'proyectos.getproyectos'
+    ]);*/
+    Route::get('proyectos/{id}',[
+        'uses'  =>  'ProyectosController@index',
+        'as'    =>   'proyectos.index'
+    ]);
+    Route::get('proyectos/create/{id}',[
+        'uses'  =>  'ProyectosController@create',
+        'as'    =>   'proyectos.create'
+    ]);
+    Route::get('proyectos/descargar/{url}',[
+        'uses'  =>  'ProyectosController@descargar',
+        'as'    =>   'proyectos.descargar'
+    ]);
+    Route::get('proyectos/destroy/{id}',[
+        'uses'  =>  'ProyectosController@destroy',
+        'as'    =>   'proyectos.destroy'
+    ]);    
+    Route::resource('proyectos', 'ProyectosController',['except'=>[
+        'index','create'
+    ]]);
+    //------------------------------------------------------
 
 	Route::get('categorias/{id}/destroy',[
             'uses'  =>  'CategoriasController@destroy',

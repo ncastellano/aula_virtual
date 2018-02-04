@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UsuarioRequest;
 use App\User;
-use DB;
 use App\img_user;
+use DB;
 use Laracasts\Flash\Flash;
 class UsuariosController extends Controller
 {
@@ -83,14 +83,16 @@ class UsuariosController extends Controller
     	//dd($user);
     	$user = User::find($id);
 
-       $asignaturas = DB::select("select a.descripcion as nombre_asig, g.descripcion as curso, pa.id_asignatura as idAsignatura, pa.id_grupo as idGrupo, id_profesor as idProfesor  from profesor_asignatura pa,  asignatura a, grupo g where
+         $asignaturas = DB::select("select a.descripcion as nombre_asig, g.descripcion as curso, pa.id_asignatura as idAsignatura, pa.id_grupo as idGrupo, id_profesor as idProfesor  from profesor_asignatura pa,  asignatura a, grupo g where
             a.id= pa.id_asignatura AND
             g.id = pa.id_grupo AND id_profesor= $id");
-       
 
     	return view('admin.users.edit')->with('user', $user)->with('asignaturas', $asignaturas);
+
+        //return view('admin.users.edit')->with('user', $user);
         
     }
+
 
     public function listAsignaturas($id)
     {
@@ -153,7 +155,7 @@ class UsuariosController extends Controller
     }
 
 
-    
+
 
     /**
      * Actualiza la empresa deseada.

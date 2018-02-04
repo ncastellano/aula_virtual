@@ -89,8 +89,8 @@
   </div>  
 </div>
 
-    <a href="{!! url('admin/asignaturas'); !!}">Seleccionar asignatura</a><br><br><br>
-   	<a href="{{ URL::to('/') }}/admin/materialhs/create/{{ $asignatura[0]->id }},{{ $grupo[0]->id }}" class="btn btn-success" >Agregar material</a>
+  <a href="{!! url('admin/asignaturas'); !!}">Seleccionar asignatura</a><br><br><br>
+  <a href="{{ URL::to('/') }}/admin/materialhs/create/{{ $asignatura[0]->id }},{{ $grupo[0]->id }}" class="btn btn-success" >Agregar material</a>
 
 {!! $materialhs->render() !!}     
 {!! $materialhsT->render() !!}   	

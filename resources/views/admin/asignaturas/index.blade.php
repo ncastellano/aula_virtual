@@ -4,7 +4,6 @@
 
 @section('content')
 
-
 <select name="asignaturas" id="asignaturas" onchange="asignatura()">
   <option value="0" selected>Seleccione una asignatura...</option>  
   @foreach($asignaturas as $asignatura)
@@ -23,7 +22,7 @@
     </li>
     <li>
       <input id='c2' type='checkbox'>
-      <label for='c2'class="fa fa-file-video-o fa" onclick="ir(2)"><p>Proyectos</p></label>
+      <label for='c2'class="fa fa-file-video-o fa" onclick="ir(2)"><p>Reporte de proyectos</p></label>
     </li>
     <li>
       <input id='c3' type='checkbox'>
@@ -79,7 +78,7 @@
 				location.href = "{{ URL::to('/') }}/admin/capsulas/"+mulVar;
 				break;
 			case 2:
-				location.href = "{{ URL::to('/') }}/admin/videos/"+mulVar;
+				location.href = "{{ URL::to('/') }}/admin/proyectos/"+mulVar;
 				break;
 			case 3:
 				location.href = "{{ URL::to('/') }}/admin/materialhs/"+mulVar;
@@ -90,10 +89,8 @@
 			case 5:
 				location.href = "{{ URL::to('/') }}/admin/guias/"+mulVar;
 				break;		
-		}
-				
+		}				
 	}
-
 	function asignatura(){
   		var asig = document.getElementById('asignaturas').value;
   			  res = asig.split("-");

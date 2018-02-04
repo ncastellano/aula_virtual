@@ -15,4 +15,16 @@ class BaseController extends Controller {
 		}
 	}
 
+	public function __construct(){
+		$tipo_usuario = 'alumno';
+        $id_usuario = Auth::id();
+        $profesor = DB::table('profesor')->where('id_usuario','=',$id_usuario);
+        if (! is_null($tipo_usuario)) {
+            # code...
+            $tipo_usuario = 'profesor';
+        }
+	    // Sharing is caring
+	    View::share('tipo_usuario', $tipo_usuario);
+	}
+
 }

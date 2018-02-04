@@ -49,7 +49,6 @@ Crear Usuario
   </div> -->
 {!! Form::close() !!}
 
- 
 
 Listado de asignaturas:
   <table class="table">
@@ -66,3 +65,4 @@ Listado de asignaturas:
 <a  class="btn btn-success" href="listAsignaturas">Agregar asignaturas</a>
 
 @endsection
+ 
